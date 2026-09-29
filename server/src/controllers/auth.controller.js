@@ -142,6 +142,52 @@ export const verifyToken = async (req, res) => {
     });
 }
 
+const passwordIsValid = (value) =>
+    typeof value === 'string' &&
+    value.length >= 8 &&
+    /[A-Z]/.test(value) &&
+    /[a-z]/.test(value) &&
+    /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(value);
+
+// Actualiza los datos del usuario autenticado (el carnet NO se puede modificar)
+export const updateProfile = async (req, res) => {
+    const userFound = users.find(user => user.carnet === req.user.carnet);
+
+    if (!userFound) return res.status(404).json(["User not found"]);
+
+    const { nombres, apellidos, genero, facultad, carrera, correo, contrasena } = req.body;
+
+    if (contrasena && !passwordIsValid(contrasena)) {
+        return res.status(400).json([
+            "Password must be at least 8 characters long and contain at least 1 uppercase, 1 lowercase and 1 special character",
+        ]);
+    }
+
+    if (nombres !== undefined) userFound.nombres = nombres;
+    if (apellidos !== undefined) userFound.apellidos = apellidos;
+    if (genero !== undefined) userFound.genero = genero;
+    if (facultad !== undefined) userFound.facultad = facultad;
+    if (carrera !== undefined) userFound.carrera = carrera;
+    if (correo !== undefined) userFound.correo = correo;
+    if (contrasena) {
+        userFound.contrasena = await bcrypt.hash(contrasena, 10);
+        userFound.isHashedPassword = true;
+    }
+
+    updateDataFile();
+
+    return res.json({
+        codigo: userFound.carnet,
+        nombres: userFound.nombres,
+        apellidos: userFound.apellidos,
+        genero: userFound.genero,
+        facultad: userFound.facultad,
+        carrera: userFound.carrera,
+        correo: userFound.correo,
+        role: userFound.role,
+    });
+};
+
 // Define the getUsers function to handle get requests for all users
 export const getUsers = async (req, res) => {
     return res.json(users);
