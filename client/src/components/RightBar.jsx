@@ -1,35 +1,37 @@
 import Avatar from "./Avatar";
 
+// NOTA: esta barra lateral es solo de diseño. Los nombres son ficticios
+// (no corresponden a usuarios reales de la base de datos).
 function RightBar() {
   return (
     <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] flex-[3] overflow-y-auto pb-4 lg:block">
       <div className="rounded-xl bg-themify-bg p-4 shadow-sm">
         <span className="text-sm text-themify-textColorSoft">
-          Suggestions For You
+          Suggestions For You (demo)
         </span>
         <div className="mt-3 flex flex-col gap-3">
-          <UserItem name="Ana María García" />
-          <UserItem name="Carlos Alberto Pérez" />
+          <UserItem name="Mario Estrada" />
+          <UserItem name="Paula Solís" />
         </div>
 
         <hr className="my-4 border-themify-border" />
 
         <span className="text-sm text-themify-textColorSoft">
-          Latest Activities
+          Latest Activities (demo)
         </span>
         <div className="mt-3 flex flex-col gap-3">
           <ActivityItem
-            user="Ana María"
-            action="changed her cover picture"
+            user="Mario Estrada"
+            action="changed their cover picture"
             time="1 min ago"
           />
           <ActivityItem
-            user="Carlos Alberto"
+            user="Paula Solís"
             action="liked your post"
             time="5 min ago"
           />
           <ActivityItem
-            user="Luisa Fernanda"
+            user="Andrés Girón"
             action="started following you"
             time="20 min ago"
           />
@@ -38,14 +40,14 @@ function RightBar() {
         <hr className="my-4 border-themify-border" />
 
         <span className="text-sm text-themify-textColorSoft">
-          Online Friends
+          Online Friends (demo)
         </span>
         <div className="mt-3 flex flex-col gap-3">
-          <OnlineFriendItem name="Ana María" />
-          <OnlineFriendItem name="Carlos Alberto" />
-          <OnlineFriendItem name="Luisa Fernanda" />
-          <OnlineFriendItem name="Pedro José" />
-          <OnlineFriendItem name="Laura Gabriela" />
+          <OnlineFriendItem name="Mario Estrada" />
+          <OnlineFriendItem name="Paula Solís" />
+          <OnlineFriendItem name="Andrés Girón" />
+          <OnlineFriendItem name="Sofía Arévalo" />
+          <OnlineFriendItem name="Diego Fuentes" />
         </div>
       </div>
     </aside>

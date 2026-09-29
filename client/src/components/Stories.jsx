@@ -4,36 +4,36 @@ import Avatar from "./Avatar";
 function Stories() {
   const { user } = useAuth();
 
-  // TEMPORARY
+  // TEMPORARY — nombres ficticios (solo diseño, no son usuarios reales)
   const stories = [
     {
       id: 1,
-      name: "Ana María",
+      name: "Mario Estrada",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 2,
-      name: "Carlos Alberto",
+      name: "Paula Solís",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 3,
-      name: "Luisa Fernanda",
+      name: "Andrés Girón",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 4,
-      name: "Pedro José",
+      name: "Sofía Arévalo",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 5,
-      name: "Laura Gabriela",
+      name: "Diego Fuentes",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 6,
-      name: "Javier Alejandro",
+      name: "Elena Blanco",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
   ];
