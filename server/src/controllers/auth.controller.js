@@ -9,7 +9,7 @@ import { TOKEN_SECRET } from '../config.js';
 // Define the register function to handle registration requests
 export const register = async (req, res) => {
     // Destructure required information from the request body
-    const { carnet, nombres, apellidos, genero, facultad, carrera, correo, contrasena, role } = req.body;
+    const { carnet, nombres, apellidos, genero, facultad, carrera, correo, contrasena } = req.body;
     try {
         // Check if a user with the provided carnet already exists
         let userExists = users.find(user => user.carnet === carnet);
@@ -21,8 +21,9 @@ export const register = async (req, res) => {
         // Hash the provided password using bcrypt
         const passwordHash = await bcrypt.hash(contrasena, 10)
 
-        // Create a new User object with the provided information
-        const newUser = new User(carnet, nombres, apellidos, genero, facultad, carrera, correo, passwordHash, role);
+        // Create a new User object with the provided information.
+        // El rol SIEMPRE es "user": no se acepta desde el cliente.
+        const newUser = new User(carnet, nombres, apellidos, genero, facultad, carrera, correo, passwordHash, 'user');
 
         // Set the isHashedPassword property to true
         newUser.isHashedPassword = true;
