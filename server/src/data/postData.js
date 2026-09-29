@@ -22,12 +22,35 @@ function normalize(post) {
     };
 }
 
+// Registros viejos comparten id: 1, lo que impedía borrarlos individualmente.
+// Reasigna ids únicos conservando el primero y continuando desde el máximo.
+function ensureUniqueIds(list) {
+    const used = new Set();
+    let max = list.reduce((acc, post) => Math.max(acc, post.id), 0);
+
+    for (const post of list) {
+        if (!post.id || used.has(post.id)) {
+            max += 1;
+            post.id = max;
+        }
+        used.add(post.id);
+    }
+
+    return list;
+}
+
 if (!fs.existsSync(FILENAME)) {
     fs.writeFileSync(FILENAME, JSON.stringify(posts));
 } else {
 
     const fileData = fs.readFileSync(FILENAME, 'utf8');
-    posts = JSON.parse(fileData).map(normalize);
+    const original = JSON.parse(fileData);
+    posts = ensureUniqueIds(original.map(normalize));
+
+    // Persiste la migración (nuevos campos / ids únicos) si hubo cambios
+    if (JSON.stringify(original) !== JSON.stringify(posts)) {
+        updateDataFilePosts();
+    }
 
 }
 
