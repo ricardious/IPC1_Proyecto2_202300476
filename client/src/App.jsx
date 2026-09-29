@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RegisterPage from './pages/Register';
 import LoginPage from './pages/Login';
 import HomePage from './pages/Home';
+import Landing from './pages/Landing';
 import Profile from './pages/Profile'
 import Admin from './pages/Admin';
 
@@ -41,7 +42,7 @@ function App() {
         <div>
           <div>
             <Routes>
-              <Route path="/"  element={<h1>Home page</h1>} />
+              <Route path="/" element={<Landing />} />
               <Route path="/login" element={
                 <div className='text-white h-[100vh] flex justify-center items-center bg-cover' 
                      style={{"backgroundImage": "url(./src/assets/background.jpg)"}}>
