@@ -1,11 +1,13 @@
 import {Router} from 'express';
-import { addPost, getPosts } from '../controllers/post.controller.js';
-
+import { addPost, getPosts, getTrending, deletePost } from '../controllers/post.controller.js';
+import { authRequired } from '../middlewares/validateToken.js';
+import { adminRequired } from '../middlewares/adminRequired.js';
 
 const router = Router();
 
-// Comment routes
 router.get('/posts', getPosts);
-router.post('/addPost', addPost);
+router.get('/posts/trending', getTrending);
+router.post('/posts', authRequired, addPost);
+router.delete('/posts/:id', adminRequired, deletePost);
 
 export default router;
