@@ -8,6 +8,10 @@ el administrador gestiona usuarios y publicaciones y exporta los datos a CSV.
 Aplicación cliente–servidor: una **API REST en Node.js + Express** y un
 **frontend en React + Vite**.
 
+<p align="center">
+  <img src="docs/capturas/04-home.webp" alt="USocial — Home" width="900">
+</p>
+
 ---
 
 ## Características
@@ -159,9 +163,15 @@ Las cuentas de prueba y sus credenciales están en
 
 ## Capturas
 
-En [`docs/capturas/`](docs/capturas) hay imágenes de las ventanas principales
-(página principal, login, registro, home, perfil, panel de administración y modo
-oscuro).
+Todas las capturas están en [`docs/capturas/`](docs/capturas).
+
+| Página principal | Registro | Admin · Publicaciones |
+|---|---|---|
+| ![](docs/capturas/01-landing.webp) | ![](docs/capturas/03-register.webp) | ![](docs/capturas/08-admin-posts.webp) |
+
+| Editar perfil | Post con comentarios | Modo oscuro |
+|---|---|---|
+| ![](docs/capturas/06-profile.webp) | ![](docs/capturas/05-post-comentarios.webp) | ![](docs/capturas/10-home-dark.webp) |
 
 ## Documentación
 
