@@ -1,15 +1,21 @@
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
-function ModalWindow({ children, show, onClose }) {
+function ModalWindow({ children, show, onClose, title = "Details" }) {
     return (
         <>
             {show &&
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="w-96 bg-white rounded-lg shadow-lg p-8">
-                        <div className="flex justify-between items-center pb-3 mb-4 border-b border-gray-200">
-                            <h3 className="font-semibold text-lg text-blue-500">titulo</h3>
-                            <button className="w-8 h-6 border border-transparent rounded-full text-blue-500 transition duration-300 hover:bg-gray-200 flex items-center justify-center">
-                                <CloseRoundedIcon className="w-full h-full" />
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black bg-opacity-50 p-4" onClick={onClose}>
+                    <div
+                        className="w-full max-w-lg rounded-lg bg-themify-bg p-6 shadow-lg"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="mb-4 flex items-center justify-between border-b border-themify-border pb-3">
+                            <h3 className="text-lg font-semibold text-blue-500">{title}</h3>
+                            <button
+                                className="flex h-8 w-8 items-center justify-center rounded-full text-blue-500 transition duration-300 hover:bg-themify-bgSoft"
+                                onClick={onClose}
+                            >
+                                <CloseRoundedIcon />
                             </button>
                         </div>
                         {children}
