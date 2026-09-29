@@ -2,9 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --themify-bg: #ffffff;
+    --themify-bg-soft: #f6f3f3;
+    --themify-text: #000000;
+    --themify-text-soft: #555555;
+    --themify-border: #d3d3d3;
+}
+
+.dark {
+    --themify-bg: #222222;
+    --themify-bg-soft: #333333;
+    --themify-text: #f5f5f5;
+    --themify-text-soft: #d3d3d3;
+    --themify-border: #444444;
+}
+
 body {
-    background: #ffffff;
-    color: #000000;
+    background: var(--themify-bg-soft);
+    color: var(--themify-text);
 }
 
 ::-webkit-scrollbar {

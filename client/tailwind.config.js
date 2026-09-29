@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,6 +8,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        themify: {
+          bg: "var(--themify-bg)",
+          bgSoft: "var(--themify-bg-soft)",
+          textColor: "var(--themify-text)",
+          textColorSoft: "var(--themify-text-soft)",
+          border: "var(--themify-border)",
+        },
         light: {
           textColor: '#000',
           bg: '#fff',
