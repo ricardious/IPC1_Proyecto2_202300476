@@ -1,17 +1,15 @@
-import LeftBar from "../components/LeftBar";
-import RightBar from "../components/RightBar";
-import Posts from "../components/Posts";
 import Stories from "../components/Stories";
 import Share from "../components/Share";
+import Posts from "../components/Posts";
 
-function HomePage(){
-    return(
-        <div>
-            <Stories/>
-            <Share/>
-            <Posts/>
-        </div>
-    )
+function HomePage() {
+  return (
+    <div className="flex flex-col gap-4 pb-8">
+      <Stories />
+      <Share />
+      <Posts />
+    </div>
+  );
 }
 
 export default HomePage;

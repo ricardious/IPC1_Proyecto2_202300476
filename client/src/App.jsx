@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import RegisterPage from './pages/Register';
 import LoginPage from './pages/Login';
 import HomePage from './pages/Home';
@@ -7,7 +7,7 @@ import Profile from './pages/Profile'
 import Admin from './pages/Admin';
 
 import { AuthProvider } from './context/AuthContext';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import background from './assets/background.jpg';
 
 
@@ -18,14 +18,13 @@ import RightBar from './components/RightBar';
 
 const Layout = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-themify-bgSoft text-themify-textColor">
       <Navbar />
-      <div style={{ display: "flex" }}>
+      <div className="mx-auto flex w-full max-w-[1400px] gap-4 px-4 pt-4">
         <LeftBar />
-        <div style={{ flex: 6 }}>
-        <HomePage/>
-
-        </div>
+        <main className="min-w-0 flex-[6]">
+          <HomePage />
+        </main>
         <RightBar />
       </div>
     </div>

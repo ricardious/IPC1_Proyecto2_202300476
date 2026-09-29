@@ -1,55 +1,102 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { DarkModeContext } from '../context/darkModeContext';
-import { AuthContext } from '../context/AuthContext';
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../context/darkModeContext";
+import { useAuth } from "../context/AuthContext";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useAuth } from '../context/AuthContext';
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+
+export const AVATAR = "https://img.icons8.com/nolan/64/react-native.png";
 
 function Navbar() {
+  const { logout, user } = useAuth();
+  const { darkMode, toggle } = useContext(DarkModeContext);
 
-  const { isAuthenticated, logout, user } = useAuth();
-
+  const name = user?.nombres || user?.name || "User";
 
   return (
-    <nav className="flex flex-col sm:flex-row items-center justify-between px-4 py-2 h-16 border-b border-themify-border bg-white sticky top-0 bg-themify-bg text-themify-textColor z-50">
-      <div className="flex items-center gap-6">
-        <Link to="/home" className="text-lg font-bold text-blue-800">
-          USocial
-        </Link>
-        <HomeOutlinedIcon className="w-6 h-6"/>
-
-        <WbSunnyOutlinedIcon  className="w-6 h-6"/>
-
-        <DarkModeOutlinedIcon className="w-6 h-6"/>
-
-        <GridViewOutlinedIcon className="w-6 h-6"/>
-        <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 md:w-96">
-          <SearchOutlinedIcon className="w-6 h-6"/>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent focus:outline-none text-gray-800 dark:text-gray-200 w-full"
-          />
+    <nav className="sticky top-0 z-50 border-b border-themify-border bg-themify-bg">
+      <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between gap-4 px-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link
+            to="/home"
+            className="text-lg font-bold text-blue-800 dark:text-blue-400"
+          >
+            USocial
+          </Link>
+          <Link
+            to="/home"
+            className="hidden rounded-full p-2 hover:bg-themify-bgSoft sm:block"
+            title="Home"
+          >
+            <HomeOutlinedIcon />
+          </Link>
+          <button
+            onClick={toggle}
+            className="rounded-full p-2 hover:bg-themify-bgSoft"
+            title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {darkMode ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}
+          </button>
+          <Link
+            to="/admin"
+            className="hidden rounded-full p-2 hover:bg-themify-bgSoft sm:block"
+            title="Dashboard"
+          >
+            <GridViewOutlinedIcon />
+          </Link>
+          <div className="hidden items-center gap-2 rounded-full bg-themify-bgSoft px-3 py-1.5 md:flex md:w-72">
+            <SearchOutlinedIcon className="text-themify-textColorSoft" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full bg-transparent text-sm outline-none placeholder:text-themify-textColorSoft"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex items-center gap-4">
-        <PersonOutlinedIcon className="w-6 h-6"/>
-        <EmailOutlinedIcon className="w-6 h-6"/>
-        <NotificationsOutlinedIcon className="w-6 h-6"/>
-        <div className="flex items-center gap-2 font-medium md:flex">
-          <img
-            src="https://img.icons8.com/nolan/64/react-native.png"
-            alt=""
-            className="w-8 h-8 rounded-full object-cover"
-          />
-          <span  onClick={() => logout()} className="text-[20px] font-bold text-blue-900">Logout</span>
+
+        <div className="flex items-center gap-1 sm:gap-3">
+          <Link
+            to="/profile"
+            className="hidden rounded-full p-2 hover:bg-themify-bgSoft sm:block"
+            title="Profile"
+          >
+            <PersonOutlinedIcon />
+          </Link>
+          <button
+            className="hidden rounded-full p-2 hover:bg-themify-bgSoft sm:block"
+            title="Messages"
+          >
+            <EmailOutlinedIcon />
+          </button>
+          <button
+            className="hidden rounded-full p-2 hover:bg-themify-bgSoft sm:block"
+            title="Notifications"
+          >
+            <NotificationsOutlinedIcon />
+          </button>
+          <div className="flex items-center gap-2">
+            <img
+              src={AVATAR}
+              alt=""
+              className="h-8 w-8 rounded-full object-cover"
+            />
+            <span className="hidden text-sm font-medium sm:block">{name}</span>
+          </div>
+          <button
+            onClick={logout}
+            className="flex items-center gap-1 rounded-full bg-themify-bgSoft px-3 py-1.5 text-sm font-medium transition-colors hover:text-red-500"
+            title="Logout"
+          >
+            <LogoutOutlinedIcon fontSize="small" />
+            <span className="hidden sm:block">Logout</span>
+          </button>
         </div>
       </div>
     </nav>

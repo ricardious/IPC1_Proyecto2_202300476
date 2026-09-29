@@ -1,60 +1,89 @@
-
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
-import moment from 'moment';
-
+import moment from "moment";
 import { useState } from "react";
+import { AVATAR } from "./Navbar";
 
-function Post({ post }){
+function Post({ post }) {
+  const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
 
+  const toggleLike = () => {
+    setLikes((prev) => (liked ? prev - 1 : prev + 1));
+    setLiked((prev) => !prev);
+  };
 
-  //TEMPORARY
-  const liked = false;
+  const hasImage =
+    typeof post.image === "string" && post.image.trim() !== "";
 
   return (
-    <div className="post shadow-lg rounded-lg bg-white dark:bg-gray-800 text-black dark:text-white">
-      <div className="container p-5">
-        <div className="user flex justify-between items-center">
-          <div className="userInfo flex items-center gap-4"> 
-            <img src="https://e1.pxfuel.com/desktop-wallpaper/556/915/desktop-wallpaper-how-to-install-reactjs-frontend.jpg" alt="" className="w-10 h-10 rounded-full object-cover" />
-            <div className="details">
-              <Link
-                to={`/profile/${post.userId}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <span className="name font-semibold block">{post.name}</span>
-              </Link>
-              <span className="date text-sm">{moment(post.date).fromNow()}</span>
-            </div>
+    <div className="rounded-xl bg-themify-bg p-4 shadow-sm">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <img
+            src={AVATAR}
+            alt=""
+            className="h-10 w-10 rounded-full object-cover"
+          />
+          <div className="leading-tight">
+            <Link
+              to="/profile"
+              className="block font-semibold hover:underline"
+            >
+              {post.name}
+            </Link>
+            {post.date && (
+              <span className="text-xs text-themify-textColorSoft">
+                {moment(post.date).fromNow()}
+              </span>
+            )}
           </div>
+        </div>
+        <button className="rounded-full p-1 hover:bg-themify-bgSoft">
           <MoreHorizIcon />
-        </div>
-        <div className="content mt-5">
-          <p>{post.description}</p>
-          <img src={"./upload/"+post.image} alt="" className="w-full max-h-96 object-cover mt-5" />
-        </div>
-        <div className="info flex items-center gap-4 mt-5">
-          <div className="item flex items-center gap-2 cursor-pointer text-sm" onClick={() => setLiked(!liked)}>
-            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-            <span className="likes">12 Likes</span>
-          </div>
-          <div className="item flex items-center gap-2 cursor-pointer text-sm" >
-            <TextsmsOutlinedIcon />
-            <span className="comments">12 Comments</span>
-          </div>
-          <div className="item flex items-center gap-2 cursor-pointer text-sm">
-            <ShareOutlinedIcon />
-            <span className="share">Share</span>
-          </div>
-        </div>
-        
+        </button>
+      </div>
+
+      {post.description && <p className="mt-4 text-sm">{post.description}</p>}
+
+      {hasImage && (
+        <img
+          src={`/upload/${post.image}`}
+          alt=""
+          className="mt-4 max-h-96 w-full rounded-lg object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      )}
+
+      <div className="mt-4 flex items-center gap-6 text-sm">
+        <button
+          className="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-themify-bgSoft"
+          onClick={toggleLike}
+        >
+          {liked ? (
+            <FavoriteOutlinedIcon className="text-red-500" fontSize="small" />
+          ) : (
+            <FavoriteBorderOutlinedIcon fontSize="small" />
+          )}
+          <span>{likes} Likes</span>
+        </button>
+        <button className="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-themify-bgSoft">
+          <TextsmsOutlinedIcon fontSize="small" />
+          <span>Comment</span>
+        </button>
+        <button className="flex items-center gap-2 rounded-full px-2 py-1 hover:bg-themify-bgSoft">
+          <ShareOutlinedIcon fontSize="small" />
+          <span>Share</span>
+        </button>
       </div>
     </div>
   );
-};
+}
 
 export default Post;
