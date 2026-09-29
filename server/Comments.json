@@ -19,5 +19,75 @@
     "user": "202300476",
     "text": "Buen dato, gracias.",
     "date": "2026-09-29T23:07:32.609Z"
+  },
+  {
+    "id": 4,
+    "postId": 10,
+    "user": "202300476",
+    "text": "Yo me apunto, escríbeme.",
+    "date": "2026-09-29T23:11:01.491Z"
+  },
+  {
+    "id": 5,
+    "postId": 10,
+    "user": "202300003",
+    "text": "¿De qué sección eres?",
+    "date": "2026-09-29T23:11:01.497Z"
+  },
+  {
+    "id": 6,
+    "postId": 10,
+    "user": "202300001",
+    "text": "Sección B, ¿y tú?",
+    "date": "2026-09-29T23:11:01.505Z"
+  },
+  {
+    "id": 7,
+    "postId": 11,
+    "user": "202300002",
+    "text": "Tengo unos, te los paso.",
+    "date": "2026-09-29T23:11:01.512Z"
+  },
+  {
+    "id": 8,
+    "postId": 11,
+    "user": "202300476",
+    "text": "Buenas, yo también los necesito.",
+    "date": "2026-09-29T23:11:01.518Z"
+  },
+  {
+    "id": 9,
+    "postId": 8,
+    "user": "202300005",
+    "text": "¿Cuándo cierra la convocatoria?",
+    "date": "2026-09-29T23:11:01.523Z"
+  },
+  {
+    "id": 10,
+    "postId": 13,
+    "user": "202300001",
+    "text": "Tengo que ir entonces.",
+    "date": "2026-09-29T23:11:01.529Z"
+  },
+  {
+    "id": 11,
+    "postId": 14,
+    "user": "202300004",
+    "text": "A mí me funciona estudiar en grupo.",
+    "date": "2026-09-29T23:11:01.534Z"
+  },
+  {
+    "id": 12,
+    "postId": 9,
+    "user": "202300002",
+    "text": "¡Te quedó increíble!",
+    "date": "2026-09-29T23:11:01.542Z"
+  },
+  {
+    "id": 13,
+    "postId": 12,
+    "user": "202300003",
+    "text": "Repórtenlo a la facultad, así lo arreglan más rápido.",
+    "date": "2026-09-29T23:11:01.550Z"
   }
 ]

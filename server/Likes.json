@@ -26,5 +26,53 @@
   {
     "postId": 1,
     "userId": "202300004"
+  },
+  {
+    "postId": 9,
+    "userId": "202300001"
+  },
+  {
+    "postId": 9,
+    "userId": "202300004"
+  },
+  {
+    "postId": 9,
+    "userId": "202300476"
+  },
+  {
+    "postId": 10,
+    "userId": "202300002"
+  },
+  {
+    "postId": 10,
+    "userId": "202300003"
+  },
+  {
+    "postId": 10,
+    "userId": "202300005"
+  },
+  {
+    "postId": 13,
+    "userId": "202300001"
+  },
+  {
+    "postId": 13,
+    "userId": "202300476"
+  },
+  {
+    "postId": 8,
+    "userId": "202300004"
+  },
+  {
+    "postId": 14,
+    "userId": "202300002"
+  },
+  {
+    "postId": 11,
+    "userId": "202300003"
+  },
+  {
+    "postId": 12,
+    "userId": "202300001"
   }
 ]

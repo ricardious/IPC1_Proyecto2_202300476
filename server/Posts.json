@@ -61,5 +61,68 @@
     "image": "1714278831720beach-waves-night-palm-trees-starry-sky-scenery-digital-art-4k-wallpaper-uhdpaper.com-11@0@j.jpg",
     "anonymous": false,
     "date": "2026-09-29T23:07:31.129Z"
+  },
+  {
+    "id": 8,
+    "user": "202300003",
+    "description": "Ya están abiertas las inscripciones al congreso de ingeniería.",
+    "category": "Anuncio Importante",
+    "image": "1714276172417sunset-waterfall-scenery-digital-art-4k-wallpaper-uhdpaper.com-224@1@n.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:00.376Z"
+  },
+  {
+    "id": 9,
+    "user": "202300005",
+    "description": "Maqueta terminada para el curso de Diseño Arquitectónico.",
+    "category": "Académico",
+    "image": "1714279205693beach-waves-night-palm-trees-starry-sky-scenery-digital-art-4k-wallpaper-uhdpaper.com-11@0@j.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:00.577Z"
+  },
+  {
+    "id": 10,
+    "user": "202300001",
+    "description": "Buscando compañeros para el proyecto de IPC1, avisen por aquí.",
+    "category": "Variedad",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:00.796Z"
+  },
+  {
+    "id": 11,
+    "user": "202300004",
+    "description": "¿Alguien tiene apuntes de Anatomía? Los míos se mojaron con la lluvia.",
+    "category": "Académico",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:01.005Z"
+  },
+  {
+    "id": 12,
+    "user": "202300002",
+    "description": "Los baños del edificio T-3 no tienen agua desde ayer.",
+    "category": "Anuncio Importante",
+    "image": "",
+    "anonymous": true,
+    "date": "2026-09-29T23:11:01.233Z"
+  },
+  {
+    "id": 13,
+    "user": "202300004",
+    "description": "La cafetería nueva está buenísima, recomiendo los churros.",
+    "category": "Divertido",
+    "image": "1714276364107riomontains.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:01.257Z"
+  },
+  {
+    "id": 14,
+    "user": "202300005",
+    "description": "Tips para sobrevivir a los parciales: dormir, comer y repasar.",
+    "category": "Divertido",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:11:01.278Z"
   }
 ]
