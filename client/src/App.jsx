@@ -44,13 +44,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={
-                <div className='text-white h-[100vh] flex justify-center items-center bg-cover' 
+                <div className='text-white min-h-screen flex justify-center items-center bg-cover bg-center px-4 py-8' 
                      style={{"backgroundImage": "url(./src/assets/background.jpg)"}}>
                   <LoginPage />
                 </div>
               } />
               <Route path="/register" element={
-                <div className='text-white h-[100vh] flex justify-center items-center bg-cover' 
+                <div className='text-white min-h-screen flex justify-center items-center bg-cover bg-center px-4 py-8' 
                      style={{"backgroundImage": "url(./src/assets/background.jpg)"}}>
                   <RegisterPage />
                 </div>
