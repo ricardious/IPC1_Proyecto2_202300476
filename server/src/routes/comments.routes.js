@@ -1,11 +1,10 @@
 import {Router} from 'express';
-import { postComment } from '../controllers/comment.controller.js';
-
+import { getComments, postComment } from '../controllers/comment.controller.js';
+import { authRequired } from '../middlewares/validateToken.js';
 
 const router = Router();
 
-// Comment routes
-router.post('/comment', postComment);
-
+router.get('/comments', getComments);
+router.post('/comments', authRequired, postComment);
 
 export default router;
