@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 1,
+    "postId": 2,
+    "user": "202300002",
+    "text": "A mí también me falla después del mediodía.",
+    "date": "2026-09-29T23:07:32.232Z"
+  },
+  {
+    "id": 2,
+    "postId": 2,
+    "user": "202300003",
+    "text": "Reporten a soporte, ayer lo arreglaron en el T-2.",
+    "date": "2026-09-29T23:07:32.422Z"
+  },
+  {
+    "id": 3,
+    "postId": 3,
+    "user": "202300476",
+    "text": "Buen dato, gracias.",
+    "date": "2026-09-29T23:07:32.609Z"
+  }
+]

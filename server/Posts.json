@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "id": 1,
+    "user": "202300001",
+    "description": "Arranca el segundo semestre, revisen sus horarios en el portal.",
+    "category": "Anuncio Importante",
+    "image": "1714276364107riomontains.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:30.190Z"
+  },
+  {
+    "id": 2,
+    "user": "202300002",
+    "description": "¿Alguien más tiene problemas con el wifi en el edificio T-3?",
+    "category": "Variedad",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:30.372Z"
+  },
+  {
+    "id": 3,
+    "user": "202300003",
+    "description": "Tip: el laboratorio de IPC1 está abierto hasta las 6 pm.",
+    "category": "Académico",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:30.548Z"
+  },
+  {
+    "id": 4,
+    "user": "202300004",
+    "description": "No se pierdan el partido de la facultad este viernes.",
+    "category": "Divertido",
+    "image": "",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:30.734Z"
+  },
+  {
+    "id": 5,
+    "user": "202300476",
+    "description": "Probando USocial, primer post de mi cuenta.",
+    "category": "Variedad",
+    "image": "1714275972123rocky-beach-night-moon-scenery-digital-art-4k-wallpaper-uhdpaper.com-873@1@m.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:30.938Z"
+  },
+  {
+    "id": 6,
+    "user": "202300005",
+    "description": "Hay un vehículo abandonado en el parqueo desde hace una semana.",
+    "category": "Anuncio Importante",
+    "image": "",
+    "anonymous": true,
+    "date": "2026-09-29T23:07:31.123Z"
+  },
+  {
+    "id": 7,
+    "user": "202300002",
+    "description": "El tráfico hacia la USAC hoy estuvo terrible.",
+    "category": "Variedad",
+    "image": "1714278831720beach-waves-night-palm-trees-starry-sky-scenery-digital-art-4k-wallpaper-uhdpaper.com-11@0@j.jpg",
+    "anonymous": false,
+    "date": "2026-09-29T23:07:31.129Z"
+  }
+]

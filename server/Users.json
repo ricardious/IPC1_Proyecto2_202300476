@@ -22,5 +22,65 @@
     "contrasena": "$2a$10$Szg1W2Sh7xanrrQvgRuL6.ee2WT0xfzkcT68cERoz3lb3G6GUrREK",
     "role": "user",
     "isHashedPassword": true
+  },
+  {
+    "carnet": "202300001",
+    "nombres": "Ana María",
+    "apellidos": "García López",
+    "genero": "Femenino",
+    "facultad": "Ingeniería",
+    "carrera": "Ingeniería en Sistemas",
+    "correo": "ana.garcia@ingenieria.usac.edu.gt",
+    "contrasena": "$2a$10$RBAIMb74Iu1KgF/D6UvQROUvCgQLdxYJxT1rIHP8qAvHK7FKZAxWe",
+    "role": "user",
+    "isHashedPassword": true
+  },
+  {
+    "carnet": "202300002",
+    "nombres": "Carlos Alberto",
+    "apellidos": "Pérez Martínez",
+    "genero": "Masculino",
+    "facultad": "Ingeniería",
+    "carrera": "Ingeniería Química",
+    "correo": "carlos.perez@ingenieria.usac.edu.gt",
+    "contrasena": "$2a$10$9cTDOgMV/WVBRywUVRA29O9ooLco7TodjzHJ3I28P2m/Jp2.5wVka",
+    "role": "user",
+    "isHashedPassword": true
+  },
+  {
+    "carnet": "202300003",
+    "nombres": "Luisa Fernanda",
+    "apellidos": "Martínez González",
+    "genero": "Femenino",
+    "facultad": "Ciencias Económicas",
+    "carrera": "Administración de Empresas",
+    "correo": "luisa.martinez@ce.usac.edu.gt",
+    "contrasena": "$2a$10$.V3WAneLx4RTErKTs7Cn/Ol7ag6FE81aKzOJErD1PFp28.9H4ht4G",
+    "role": "user",
+    "isHashedPassword": true
+  },
+  {
+    "carnet": "202300004",
+    "nombres": "Juan Carlos",
+    "apellidos": "García Hernández",
+    "genero": "Masculino",
+    "facultad": "Medicina",
+    "carrera": "Medicina",
+    "correo": "juan.garcia@medicina.usac.edu.gt",
+    "contrasena": "$2a$10$vAGDph88fQ20XNcjI6X6fukiMYfX7qr3cpV25wxjCPTb5BmCAPGzS",
+    "role": "user",
+    "isHashedPassword": true
+  },
+  {
+    "carnet": "202300005",
+    "nombres": "Sofía Alejandra",
+    "apellidos": "Ramírez Ortiz",
+    "genero": "Femenino",
+    "facultad": "Arquitectura",
+    "carrera": "Arquitectura",
+    "correo": "sofia.ramirez@arquitectura.usac.edu.gt",
+    "contrasena": "$2a$10$8ZseacDvwYtX4kvaoysnTOwZk38DRugr4OlPbtY30Y27eZnfB811G",
+    "role": "user",
+    "isHashedPassword": true
   }
 ]
