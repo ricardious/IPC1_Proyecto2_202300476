@@ -39,6 +39,9 @@ lerna-debug.log*
 *.sln
 *.sw?
 
+# Browser automation working directory
+.playwright-cli/
+
 # OS files
 .DS_Store
 Thumbs.db
