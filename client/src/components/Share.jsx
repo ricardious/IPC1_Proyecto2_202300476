@@ -4,12 +4,23 @@ import Friend from "../assets/friend.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import instance from "../api/axios";
+import { createPostRequest } from "../api/auth";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AVATAR } from "./Navbar";
+
+export const CATEGORIES = [
+  "Anuncio Importante",
+  "Divertido",
+  "Académico",
+  "Variedad",
+];
 
 function Share() {
   const [file, setFile] = useState(null);
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [anonymous, setAnonymous] = useState(false);
+  const [error, setError] = useState("");
 
   const { user } = useContext(AuthContext);
 
@@ -23,28 +34,48 @@ function Share() {
   };
 
   const mutation = useMutation({
-    mutationFn: (newPost) => instance.post("/addPost", newPost),
+    mutationFn: (newPost) => createPostRequest(newPost),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts"] });
+      setDescription("");
+      setCategory("");
+      setAnonymous(false);
+      setFile(null);
+      setError("");
+    },
+    onError: (err) => {
+      const data = err.response?.data;
+      setError(Array.isArray(data) ? data.join(", ") : "The post could not be published");
     },
   });
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setError("");
+
+    if (!description.trim()) {
+      setError("Description is required");
+      return;
+    }
+    if (!category) {
+      setError("Category is required");
+      return;
+    }
+
     let imgUrl = "";
     try {
       if (file) imgUrl = await upload();
-      mutation.mutate({
-        userId: user?.codigo ?? user?.carnet,
-        name: user?.nombres,
-        description,
-        image: imgUrl,
-      });
-      setDescription("");
-      setFile(null);
-    } catch (error) {
-      console.error(error);
+    } catch {
+      setError("The image could not be uploaded");
+      return;
     }
+
+    mutation.mutate({
+      description,
+      category,
+      image: imgUrl,
+      anonymous,
+    });
   };
 
   return (
@@ -73,6 +104,36 @@ function Share() {
           />
         </div>
       )}
+
+      <div className="mt-3 flex flex-wrap items-center gap-4">
+        <label className="flex items-center gap-2 text-sm">
+          <span className="text-themify-textColorSoft">Category:</span>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="rounded-md border border-themify-border bg-themify-bg px-2 py-1 text-sm outline-none"
+          >
+            <option value="">Select a category</option>
+            {CATEGORIES.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="flex cursor-pointer items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={anonymous}
+            onChange={(e) => setAnonymous(e.target.checked)}
+            className="h-4 w-4"
+          />
+          <span>Publish anonymously</span>
+        </label>
+      </div>
+
+      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
 
       <hr className="my-4 border-themify-border" />
 
