@@ -4,36 +4,36 @@ import Avatar from "./Avatar";
 function Stories() {
   const { user } = useAuth();
 
-  // TEMPORARY — nombres ficticios (solo diseño, no son usuarios reales)
+  // TEMPORARY — nombres genéricos de ejemplo (solo diseño, no son usuarios reales)
   const stories = [
     {
       id: 1,
-      name: "Mario Estrada",
+      name: "John Doe",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 2,
-      name: "Paula Solís",
+      name: "Jane Doe",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 3,
-      name: "Andrés Girón",
+      name: "John Smith",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 4,
-      name: "Sofía Arévalo",
+      name: "Jane Smith",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 5,
-      name: "Diego Fuentes",
+      name: "Robert Johnson",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
       id: 6,
-      name: "Elena Blanco",
+      name: "Emily Davis",
       img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
   ];

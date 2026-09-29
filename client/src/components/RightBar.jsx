@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 
-// NOTA: esta barra lateral es solo de diseño. Los nombres son ficticios
-// (no corresponden a usuarios reales de la base de datos).
+// NOTA: esta barra lateral es solo de diseño. Se usan nombres genéricos
+// de ejemplo (John Doe, ...), no corresponden a usuarios reales.
 function RightBar() {
   return (
     <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] flex-[3] overflow-y-auto pb-4 lg:block">
@@ -10,8 +10,8 @@ function RightBar() {
           Suggestions For You (demo)
         </span>
         <div className="mt-3 flex flex-col gap-3">
-          <UserItem name="Mario Estrada" />
-          <UserItem name="Paula Solís" />
+          <UserItem name="John Doe" />
+          <UserItem name="Jane Doe" />
         </div>
 
         <hr className="my-4 border-themify-border" />
@@ -21,17 +21,17 @@ function RightBar() {
         </span>
         <div className="mt-3 flex flex-col gap-3">
           <ActivityItem
-            user="Mario Estrada"
+            user="John Doe"
             action="changed their cover picture"
             time="1 min ago"
           />
           <ActivityItem
-            user="Paula Solís"
+            user="Jane Doe"
             action="liked your post"
             time="5 min ago"
           />
           <ActivityItem
-            user="Andrés Girón"
+            user="John Smith"
             action="started following you"
             time="20 min ago"
           />
@@ -43,11 +43,11 @@ function RightBar() {
           Online Friends (demo)
         </span>
         <div className="mt-3 flex flex-col gap-3">
-          <OnlineFriendItem name="Mario Estrada" />
-          <OnlineFriendItem name="Paula Solís" />
-          <OnlineFriendItem name="Andrés Girón" />
-          <OnlineFriendItem name="Sofía Arévalo" />
-          <OnlineFriendItem name="Diego Fuentes" />
+          <OnlineFriendItem name="John Doe" />
+          <OnlineFriendItem name="Jane Doe" />
+          <OnlineFriendItem name="John Smith" />
+          <OnlineFriendItem name="Jane Smith" />
+          <OnlineFriendItem name="Robert Johnson" />
         </div>
       </div>
     </aside>
