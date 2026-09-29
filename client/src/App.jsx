@@ -8,6 +8,7 @@ import Admin from './pages/Admin';
 
 import { AuthProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+import background from './assets/background.jpg';
 
 
 import ProtectedRoute from './ProtectedRoute';
@@ -45,13 +46,13 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={
                 <div className='text-white min-h-screen flex justify-center items-center bg-cover bg-center px-4 py-8' 
-                     style={{"backgroundImage": "url(./src/assets/background.jpg)"}}>
+                     style={{ backgroundImage: `url(${background})` }}>
                   <LoginPage />
                 </div>
               } />
               <Route path="/register" element={
                 <div className='text-white min-h-screen flex justify-center items-center bg-cover bg-center px-4 py-8' 
-                     style={{"backgroundImage": "url(./src/assets/background.jpg)"}}>
+                     style={{ backgroundImage: `url(${background})` }}>
                   <RegisterPage />
                 </div>
               } />
