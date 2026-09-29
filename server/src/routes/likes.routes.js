@@ -1,13 +1,10 @@
 import {Router} from 'express';
-import { getLikes, addLike, deleteLike } from '../controllers/like.controller.js';
-
+import { getLikes, toggleLike } from '../controllers/like.controller.js';
+import { authRequired } from '../middlewares/validateToken.js';
 
 const router = Router();
 
-// Comment routes
 router.get('/likes', getLikes);
-router.post('/likes', addLike);
-router.delete('/likes', deleteLike);
-
+router.post('/likes', authRequired, toggleLike);
 
 export default router;
