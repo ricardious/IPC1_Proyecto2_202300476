@@ -5,6 +5,7 @@ import commentsRoutes from './routes/comments.routes.js';
 import likesRoutes from './routes/likes.routes.js';
 import postsRoutes from './routes/posts.routes.js';
 import usersRoutes from './routes/users.routes.js';
+import exportRoutes from './routes/export.routes.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import multer from 'multer';
@@ -46,6 +47,7 @@ app.use("/api", commentsRoutes);
 app.use("/api", likesRoutes);
 app.use("/api", postsRoutes);
 app.use("/api", usersRoutes);
+app.use("/api", exportRoutes);
 
 
 export default app;
