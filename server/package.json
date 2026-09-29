@@ -7,6 +7,14 @@
   "scripts": {
     "dev": "nodemon src/index.js"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "Users.json",
+      "Posts.json",
+      "Likes.json",
+      "Comments.json"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
