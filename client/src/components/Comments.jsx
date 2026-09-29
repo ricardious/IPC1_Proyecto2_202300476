@@ -2,7 +2,7 @@ import { useState } from "react";
 import moment from "moment";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getCommentsRequest, createCommentRequest } from "../api/auth";
-import { AVATAR } from "./Navbar";
+import Avatar from "./Avatar";
 
 function Comments({ postId }) {
   const [text, setText] = useState("");
@@ -42,11 +42,7 @@ function Comments({ postId }) {
         <div className="flex flex-col gap-3">
           {comments.map((comment) => (
             <div key={comment.id} className="flex gap-3">
-              <img
-                src={AVATAR}
-                alt=""
-                className="h-8 w-8 rounded-full object-cover"
-              />
+              <Avatar name={comment.name} size={32} />
               <div className="rounded-2xl bg-themify-bgSoft px-3 py-2">
                 <div className="text-sm leading-tight">
                   <span className="font-semibold">{comment.name}</span>{" "}

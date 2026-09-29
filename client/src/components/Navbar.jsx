@@ -11,8 +11,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-
-export const AVATAR = "https://img.icons8.com/nolan/64/react-native.png";
+import Avatar from "./Avatar";
 
 function Navbar() {
   const { logout, user } = useAuth();
@@ -82,11 +81,7 @@ function Navbar() {
             <NotificationsOutlinedIcon />
           </button>
           <div className="flex items-center gap-2">
-            <img
-              src={AVATAR}
-              alt=""
-              className="h-8 w-8 rounded-full object-cover"
-            />
+            <Avatar name={name} size={32} />
             <span className="hidden text-sm font-medium sm:block">{name}</span>
           </div>
           <button

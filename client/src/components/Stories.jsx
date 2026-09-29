@@ -1,6 +1,9 @@
-import { AVATAR } from "./Navbar";
+import { useAuth } from "../context/AuthContext";
+import Avatar from "./Avatar";
 
 function Stories() {
+  const { user } = useAuth();
+
   // TEMPORARY
   const stories = [
     {
@@ -38,18 +41,12 @@ function Stories() {
   return (
     <div className="flex gap-3 overflow-x-auto pb-1">
       {/* Create story */}
-      <div className="relative h-48 w-28 flex-shrink-0 overflow-hidden rounded-xl bg-themify-bg shadow-sm">
-        <img
-          src={AVATAR}
-          alt=""
-          className="h-16 w-full object-cover opacity-90"
-        />
-        <div className="flex h-full flex-col items-center justify-center pt-2">
-          <span className="absolute left-1/2 top-[4.5rem] flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-themify-bg bg-blue-600 text-xl leading-none text-white">
-            +
-          </span>
-          <span className="mt-8 text-xs font-medium">Create story</span>
-        </div>
+      <div className="flex h-48 w-28 flex-shrink-0 flex-col items-center justify-start gap-2 overflow-hidden rounded-xl bg-themify-bg pt-3 shadow-sm">
+        <Avatar name={user?.nombres || "User"} size={44} />
+        <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-themify-bg bg-blue-600 text-xl leading-none text-white">
+          +
+        </span>
+        <span className="text-xs font-medium">Create story</span>
       </div>
 
       {stories.map((story) => (

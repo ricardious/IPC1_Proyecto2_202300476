@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import instance from "../api/axios";
 import { createPostRequest } from "../api/auth";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { AVATAR } from "./Navbar";
+import Avatar from "./Avatar";
 
 export const CATEGORIES = [
   "Anuncio Importante",
@@ -81,11 +81,7 @@ function Share() {
   return (
     <div className="rounded-xl bg-themify-bg p-4 shadow-sm">
       <div className="flex items-center gap-3">
-        <img
-          src={AVATAR}
-          alt=""
-          className="h-10 w-10 rounded-full object-cover"
-        />
+        <Avatar name={user?.nombres || "User"} size={40} />
         <input
           type="text"
           placeholder={`What's on your mind, ${user?.nombres || ""}?`}

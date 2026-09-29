@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import { AVATAR } from "./Navbar";
+import Avatar from "./Avatar";
 
 import Friends from "../assets/1.png";
 import Groups from "../assets/2.png";
@@ -22,11 +22,7 @@ function LeftBar() {
     <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] flex-[2] overflow-y-auto pb-4 md:block">
       <div className="rounded-xl bg-themify-bg p-4 shadow-sm">
         <div className="flex items-center gap-3">
-          <img
-            src={AVATAR}
-            alt=""
-            className="h-9 w-9 rounded-full object-cover"
-          />
+          <Avatar name={user?.nombres || "User"} size={36} />
           <span className="font-medium">{user?.nombres || "User"}</span>
         </div>
 

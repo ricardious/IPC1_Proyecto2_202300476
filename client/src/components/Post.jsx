@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { AVATAR } from "./Navbar";
+import Avatar from "./Avatar";
 import Comments from "./Comments";
 import { toggleLikeRequest } from "../api/auth";
 
@@ -43,11 +43,7 @@ function Post({ post }) {
     <div className="rounded-xl bg-themify-bg p-4 shadow-sm">
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
-          <img
-            src={AVATAR}
-            alt=""
-            className="h-10 w-10 rounded-full object-cover"
-          />
+          <Avatar name={post.name} size={40} />
           <div className="leading-tight">
             <Link to="/profile" className="block font-semibold hover:underline">
               {post.name}
