@@ -10,5 +10,17 @@
     "contrasena": "$2a$10$9nXjcfj0GIql6r9MTlWrq.9yVmdekwnHsSpPPRTVTgTiMJJJUMEdK",
     "isHashedPassword": true,
     "role": "admin"
+  },
+  {
+    "carnet": "202300476",
+    "nombres": "Alex Ricardo",
+    "apellidos": "Castañeda Rodríguez",
+    "genero": "Male",
+    "facultad": "Ingeniería",
+    "carrera": "Ciencias y Sistemas",
+    "correo": "202300476@gmail.com",
+    "contrasena": "$2a$10$Szg1W2Sh7xanrrQvgRuL6.ee2WT0xfzkcT68cERoz3lb3G6GUrREK",
+    "role": "user",
+    "isHashedPassword": true
   }
 ]
