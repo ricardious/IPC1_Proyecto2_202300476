@@ -1,5 +1,7 @@
 # USocial
 
+*Proyecto desarrollado en el primer semestre de 2024.*
+
 Red social tipo blog y foro para la comunidad de la Universidad de San Carlos
 de Guatemala. Los usuarios pueden publicar anuncios, reportes y opiniones con
 imágenes o solo texto, comentar, dar "Me gusta" y publicar de forma anónima;
@@ -186,3 +188,5 @@ Todas las capturas están en [`docs/capturas/`](docs/capturas).
 **Alex Ricardo Castañeda Rodríguez** — Carné `202300476`
 Introducción a la Programación y Computación 1 — Sección B
 Universidad de San Carlos de Guatemala
+
+*Primer semestre de 2024.*
